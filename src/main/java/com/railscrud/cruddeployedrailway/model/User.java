@@ -1,11 +1,15 @@
 package com.railscrud.cruddeployedrailway.model;
 
+import com.railscrud.cruddeployedrailway.service.agebusiness.RankCheck;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity(name = "User")
 @Table(name = "tb_user")
@@ -29,7 +33,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     private CategoryPlace categoryPlace;
 
-    public User (UserPostDTO dto) {
+    public User(UserPostDTO dto) {
         this.name = dto.name();
         this.age = dto.age();
         this.register = dto.register();
@@ -43,17 +47,9 @@ public class User {
         this.email = dto.email();
     }
 
-    public CategoryPlace rankCategory(Integer age) {
-        if (age <= 10) {
-            return this.categoryPlace = CategoryPlace.KID;
-        }
-        if (age <= 17) {
-            return this.categoryPlace = CategoryPlace.TEENAGE;
-        }
-        if (age <= 60) {
-            return this.categoryPlace = CategoryPlace.ADULT;
-        } else {
-            return this.categoryPlace = CategoryPlace.ELDER;
-        }
+    public CategoryPlace setCategoryPlace(CategoryPlace categoryPlace) {
+        this.categoryPlace = categoryPlace;
+        return categoryPlace;
     }
+
 }
