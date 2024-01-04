@@ -13,7 +13,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/user")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://crud1-production.up.railway.app/swagger-ui.html")
 public class UserController {
     @Autowired
     private UserService userService;

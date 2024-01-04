@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/helloworld")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://crud1-production.up.railway.app/swagger-ui.html")
 public class ControllerHelloWorld {
     @GetMapping
     public String helloWorld(){

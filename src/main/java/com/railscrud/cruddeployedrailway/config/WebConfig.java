@@ -12,7 +12,7 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("*")
+                        .allowedOrigins("https://crud1-production.up.railway.app/swagger-ui.html")
                         .allowedMethods("GET", "POST", "PUT", "DELETE");
             }
         };
