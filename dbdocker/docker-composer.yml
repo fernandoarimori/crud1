@@ -24,3 +24,4 @@ services:
 
 
 #mysql://root:D6A3BE-b1e25c6BHDc3-B2FDfdG-GBAC@viaduct.proxy.rlwy.net:15751/railway
+#jdbc:mysql://viaduct.proxy.rlwy.net:15751/railway
