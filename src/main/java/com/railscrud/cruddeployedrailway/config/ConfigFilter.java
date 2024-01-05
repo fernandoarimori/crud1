@@ -15,7 +15,7 @@ public class ConfigFilter{
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity.authorizeHttpRequests(
-                request->request.requestMatchers("/*").permitAll()
+                request->request.requestMatchers("/swagger-ui.html").permitAll().anyRequest().authenticated()
         ).build();
     }
 }
